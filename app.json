@@ -1,11 +1,14 @@
 {
   "expo": {
     "name": "FemsaChallenge",
-    "slug": "FemsaChallenge",
+    "slug": "femsachallenge",
     "version": "1.0.0",
+    "owner": "cesarrivas10",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "platforms": ["ios", "android"],
+    "description": "Femsa Challenge App",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -18,9 +21,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cesarrivas10.fensachallenge.ios",
+      "buildNumber": "1.0.0"
     },
     "android": {
+      "package": "com.cesarrivas10.fensachallenge.android",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
