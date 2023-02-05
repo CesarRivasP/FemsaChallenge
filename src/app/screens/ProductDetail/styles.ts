@@ -2,7 +2,6 @@ import {StyleSheet} from 'react-native';
 import {scale, verticalScale} from '@utils/responsiveUtils';
 import {
   backgroundGray,
-  blue,
   gray,
   lightBlue,
   white,
@@ -84,17 +83,6 @@ export default StyleSheet.create({
     justifyContent: IS_IOS ? 'center' : 'flex-start',
   },
   buttonContainer: {
-    backgroundColor: blue,
     width: '100%',
-    height: verticalScale(50),
-    borderRadius: verticalScale(10),
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  buttonText: {
-    color: white,
-    fontFamily: 'AvenirBold',
-    fontSize: 16,
-    lineHeight: verticalScale(20),
   },
 });

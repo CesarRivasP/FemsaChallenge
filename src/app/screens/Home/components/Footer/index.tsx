@@ -1,6 +1,6 @@
 import React, {memo} from 'react';
-import {Text, TouchableOpacity, View} from 'react-native';
-import useTranslations from '@hooks/useTranslations';
+import {View} from 'react-native';
+import CustomButton from '@components/CustomButton';
 import {ListFilters} from '@screens/Home/constants';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
@@ -11,40 +11,29 @@ interface FooterProps {
 }
 
 function Footer({isAllFilter, handleChangeListFilter}: FooterProps) {
-  const {translate} = useTranslations();
-
   let renderSelectedButton = null;
 
   if (!isAllFilter) {
     renderSelectedButton = (
-      <TouchableOpacity
-        activeOpacity={0.8}
-        style={styles.allButtonContainer}
-        onPress={() => handleChangeListFilter(ListFilters.ALL)}>
-        <Text style={styles.buttonText}>
-          {translate(`${TRANSLATE_KEY}:ALL_BUTTON`)}
-        </Text>
-      </TouchableOpacity>
+      <CustomButton
+        title={`${TRANSLATE_KEY}:ALL_BUTTON`}
+        containerStyle={styles.allButtonContainer}
+        onPress={() => handleChangeListFilter(ListFilters.ALL)}
+      />
     );
   } else {
     renderSelectedButton = (
       <>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.paralelsButtonContainer}
-          onPress={() => handleChangeListFilter(ListFilters.WINNING)}>
-          <Text style={styles.buttonText}>
-            {translate(`${TRANSLATE_KEY}:WINNING_FILTER_BUTTON`)}
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.paralelsButtonContainer}
-          onPress={() => handleChangeListFilter(ListFilters.REDEEMED)}>
-          <Text style={styles.buttonText}>
-            {translate(`${TRANSLATE_KEY}:REDEEMED_FILTER_BUTTON`)}
-          </Text>
-        </TouchableOpacity>
+        <CustomButton
+          title={`${TRANSLATE_KEY}:WINNING_FILTER_BUTTON`}
+          containerStyle={styles.paralelsButtonContainer}
+          onPress={() => handleChangeListFilter(ListFilters.WINNING)}
+        />
+        <CustomButton
+          title={`${TRANSLATE_KEY}:REDEEMED_FILTER_BUTTON`}
+          containerStyle={styles.paralelsButtonContainer}
+          onPress={() => handleChangeListFilter(ListFilters.REDEEMED)}
+        />
       </>
     );
   }

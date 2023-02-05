@@ -1,10 +1,11 @@
 import React from 'react';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import useRouteWithParams from '@hooks/useRouteWithParams';
-import Routes from '@constants/routes';
 import withSafeArea from '@components/SafeAreaWrapper';
+import CustomButton from '@components/CustomButton';
 import useTranslations from '@hooks/useTranslations';
+import Routes from '@constants/routes';
 import styles from '@screens/ProductDetail/styles';
 import {TRANSLATE_KEY} from '@screens/ProductDetail/i18n';
 
@@ -44,14 +45,11 @@ function ProductDetail() {
         </View>
       </View>
       <View style={styles.buttonLayoutContainer}>
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={styles.buttonContainer}
-          onPress={goBack}>
-          <Text style={styles.buttonText}>
-            {translate(`${TRANSLATE_KEY}:CONFIRM_BUTTON`)}
-          </Text>
-        </TouchableOpacity>
+        <CustomButton
+          title={`${TRANSLATE_KEY}:CONFIRM_BUTTON`}
+          containerStyle={styles.buttonContainer}
+          onPress={goBack}
+        />
       </View>
     </View>
   );
