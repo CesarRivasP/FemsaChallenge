@@ -1,0 +1,10 @@
+export const transparent: string = 'transparent';
+export const white: string = '#FFFFFF';
+export const solidBlack: string = '#000000';
+export const richBlack: string = '#020202';
+export const iconBlack: string = '#070707';
+export const gray: string = '#9B9898';
+export const backgroundGray: string = '#F8F8F8';
+export const red: string = '#FF0000';
+export const green: string = '#00B833';
+export const blue: string = '#334FFA';
