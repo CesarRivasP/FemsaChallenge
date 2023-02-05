@@ -4,6 +4,7 @@ import CustomButton from '@components/CustomButton';
 import {ListFilters} from '@screens/Home/constants';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
+import testIds from '@screens/Home/testIds';
 
 interface FooterProps {
   isAllFilter: boolean;
@@ -17,6 +18,7 @@ function Footer({isAllFilter, handleChangeListFilter}: FooterProps) {
     renderSelectedButton = (
       <CustomButton
         title={`${TRANSLATE_KEY}:ALL_BUTTON`}
+        testID={testIds.allButton}
         containerStyle={styles.allButtonContainer}
         onPress={() => handleChangeListFilter(ListFilters.ALL)}
       />
@@ -26,11 +28,13 @@ function Footer({isAllFilter, handleChangeListFilter}: FooterProps) {
       <>
         <CustomButton
           title={`${TRANSLATE_KEY}:WINNING_FILTER_BUTTON`}
+          testID={testIds.winningButton}
           containerStyle={styles.paralelsButtonContainer}
           onPress={() => handleChangeListFilter(ListFilters.WINNING)}
         />
         <CustomButton
           title={`${TRANSLATE_KEY}:REDEEMED_FILTER_BUTTON`}
+          testID={testIds.redeemedButton}
           containerStyle={styles.paralelsButtonContainer}
           onPress={() => handleChangeListFilter(ListFilters.REDEEMED)}
         />

@@ -10,6 +10,7 @@ import ProductsService from '@services/index';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
 import Routes from '@constants/routes';
+import testIds from '@screens/Home/testIds';
 
 function Home() {
   const [data, setData] = useState<ListData[]>([]);
@@ -27,7 +28,7 @@ function Home() {
       }
       setData([...response.data]);
     } catch (error) {
-      console.error(error);
+      console.error('[ERROR_PRODUCTS_SERVICE_GET]: ', error);
     }
   }, []);
 
@@ -81,7 +82,7 @@ function Home() {
 
   const handleShowEmptyMessage = () => (
     <View style={styles.emptyContainer}>
-      <Text style={styles.emptyText}>
+      <Text testID={testIds.emptyContent} style={styles.emptyText}>
         {translate(`${TRANSLATE_KEY}:EMPTY_MESSAGE`)}
       </Text>
     </View>

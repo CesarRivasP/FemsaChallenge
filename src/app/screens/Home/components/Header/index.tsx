@@ -3,6 +3,7 @@ import {Text, View} from 'react-native';
 import useTranslations from '@hooks/useTranslations';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
+import testIds from '@screens/Home/testIds';
 
 interface HeaderProps {
   month: string;
@@ -15,10 +16,12 @@ function Header({month, name, totalPoints}: HeaderProps) {
   return (
     <View style={styles.headContainer}>
       <View style={styles.headerContainer}>
-        <Text style={styles.title}>
+        <Text style={styles.title} testID={testIds.title}>
           {translate(`${TRANSLATE_KEY}:WELCOME_TITLE`)}
         </Text>
-        <Text style={styles.titleUsername}>{name}</Text>
+        <Text style={styles.titleUsername} testID={testIds.name}>
+          {name}
+        </Text>
       </View>
       <View style={styles.cardContainer}>
         <Text style={styles.labelText}>
@@ -26,8 +29,12 @@ function Header({month, name, totalPoints}: HeaderProps) {
         </Text>
         <View style={styles.cardInfoContainer}>
           <View style={styles.cardInfo}>
-            <Text style={styles.cardInfoDate}>{month}</Text>
-            <Text style={styles.cardInfoPoints}>{`${totalPoints} pts`}</Text>
+            <Text style={styles.cardInfoDate} testID={testIds.month}>
+              {month}
+            </Text>
+            <Text
+              style={styles.cardInfoPoints}
+              testID={testIds.points}>{`${totalPoints} pts`}</Text>
           </View>
         </View>
       </View>

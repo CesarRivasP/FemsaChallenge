@@ -28,6 +28,6 @@
     },
     "skipLibCheck": true
   },
-  "include": ["index.d.ts", "src/**/*"],
+  "include": ["index.d.ts", "src/**/*", "jest.config.js"],
   "exclude": [ "node_modules", "**/node_modules/*"]
 }
