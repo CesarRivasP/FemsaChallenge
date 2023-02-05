@@ -9,6 +9,7 @@ import {ListProps, ListData, ListFilters} from '@screens/Home/constants';
 import ProductsService from '@services/index';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
+import Routes from '@constants/routes';
 
 function Home() {
   const [data, setData] = useState<ListData[]>([]);
@@ -117,4 +118,4 @@ function Home() {
   );
 }
 
-export default withSafeArea(Home);
+export default withSafeArea(Routes.Home, Home);

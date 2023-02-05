@@ -8,3 +8,4 @@ export const backgroundGray: string = '#F8F8F8';
 export const red: string = '#FF0000';
 export const green: string = '#00B833';
 export const blue: string = '#334FFA';
+export const lightBlue: string = '#CFD6FF';

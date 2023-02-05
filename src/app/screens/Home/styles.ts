@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import {scale, verticalScale} from '@utils/responsiveUtils';
-import {blue, gray, white, green, red} from '@constants/colors';
+import {blue, gray, white, green, red, solidBlack} from '@constants/colors';
 import {IS_IOS} from '@constants/device';
 
 export default StyleSheet.create({
@@ -49,6 +49,14 @@ export default StyleSheet.create({
     paddingHorizontal: scale(19),
     justifyContent: 'center',
     alignItems: 'center',
+    shadowColor: solidBlack,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.4,
+    shadowRadius: 3,
+    elevation: 14,
   },
   cardInfoDate: {
     color: white,

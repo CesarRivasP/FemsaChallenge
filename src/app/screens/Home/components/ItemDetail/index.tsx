@@ -1,4 +1,4 @@
-import React, {memo} from 'react';
+import React, {memo, useMemo} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import {ArrowIcon} from '@components/Icons';
@@ -23,8 +23,15 @@ function ItemDetail({
 }: ItemDetailProps) {
   const {navigate} = useNavigation();
 
+  const date = useMemo(() => getDateFormatted(createdAt), [createdAt]);
+
   const handlePress = () =>
-    navigate(Routes.ProductDetail, {createdAt, image, points});
+    navigate(Routes.ProductDetail, {
+      createdAt: date,
+      image,
+      points,
+      product,
+    });
 
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={handlePress}>
@@ -33,9 +40,7 @@ function ItemDetail({
       </View>
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionTitle}>{product}</Text>
-        <Text style={styles.descriptionDate}>
-          {getDateFormatted(createdAt)}
-        </Text>
+        <Text style={styles.descriptionDate}>{date}</Text>
       </View>
       <View style={styles.pointAndSelectOptionContainer}>
         <Text style={styles.pointsText}>
