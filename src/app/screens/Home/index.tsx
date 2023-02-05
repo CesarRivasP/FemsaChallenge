@@ -1,18 +1,53 @@
-import React, {useCallback, useMemo} from 'react';
-import {FlatList, Text, TouchableOpacity, View} from 'react-native';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
+import {FlatList, Text, View} from 'react-native';
 import withSafeArea from '@components/SafeAreaWrapper';
 import useTranslations from '@hooks/useTranslations';
+import Header from '@screens/Home/components/Header';
 import ItemDetail from '@screens/Home/components/ItemDetail';
-import {data, ListProps} from '@screens/Home/constants';
+import Footer from '@screens/Home/components/Footer';
+import {ListProps, ListData, ListFilters} from '@screens/Home/constants';
+import ProductsService from '@services/index';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
 
 function Home() {
+  const [data, setData] = useState<ListData[]>([]);
+  const [listFilter, setListFilter] = useState<ListFilters>(ListFilters.ALL);
+
+  const isAllFilter: boolean = listFilter === ListFilters.ALL;
+
   const {translate} = useTranslations();
+
+  const handleGetServices = useCallback(async () => {
+    try {
+      const response = await ProductsService.productsList();
+      if (response.status !== 200) {
+        return;
+      }
+      setData([...response.data]);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  useEffect(() => {
+    handleGetServices();
+  }, [handleGetServices]);
+
+  const productsList = useMemo(() => {
+    let products = [...data];
+    if (listFilter === ListFilters.WINNING) {
+      products = products.filter(product => !product.is_redemption);
+    }
+    if (listFilter === ListFilters.REDEEMED) {
+      products = products.filter(product => product.is_redemption);
+    }
+    return products;
+  }, [listFilter, data]);
 
   const totalPoints = useMemo(() => {
     let points = 0;
-    data.forEach(element => {
+    data?.forEach(element => {
       if (element?.is_redemption) {
         points -= element?.points || 0;
       } else {
@@ -20,7 +55,9 @@ function Home() {
       }
     });
     return points;
-  }, []);
+  }, [data]);
+
+  const handleChangeListFilter = (filter: ListFilters) => setListFilter(filter);
 
   const handleKeyExtractor = useCallback(
     (item: ListProps['item']) => item?.id,
@@ -51,26 +88,11 @@ function Home() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.headContainer}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.title}>
-            {translate(`${TRANSLATE_KEY}:WELCOME_TITLE`)}
-          </Text>
-          <Text style={styles.titleUsername}>{'Ruben Rodriguez'}</Text>
-        </View>
-        <View style={styles.cardContainer}>
-          <Text style={styles.labelText}>
-            {translate(`${TRANSLATE_KEY}:USER_POINTS_LABEL`)}
-          </Text>
-          <View style={styles.cardInfoContainer}>
-            <View style={styles.cardInfo}>
-              <Text style={styles.cardInfoDate}>{'Diciembre'}</Text>
-              <Text style={styles.cardInfoPoints}>{`${totalPoints} pts`}</Text>
-            </View>
-          </View>
-        </View>
-      </View>
-
+      <Header
+        month="Diciembre"
+        name="Ruben Rodriguez"
+        totalPoints={totalPoints}
+      />
       <View style={styles.bottomContainer}>
         <View style={styles.listContainer}>
           <Text style={[styles.labelText, styles.labelListText]}>
@@ -79,20 +101,17 @@ function Home() {
           <View style={styles.listCardContainer}>
             <FlatList
               keyExtractor={handleKeyExtractor}
-              data={data}
+              data={productsList}
               renderItem={handleRenderItems}
               ListEmptyComponent={handleShowEmptyMessage}
               showsVerticalScrollIndicator={false}
             />
           </View>
         </View>
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.allButtonContainer}>
-            <Text style={styles.buttonText}>
-              {translate(`${TRANSLATE_KEY}:ALL_BUTTON`)}
-            </Text>
-          </TouchableOpacity>
-        </View>
+        <Footer
+          isAllFilter={isAllFilter}
+          handleChangeListFilter={handleChangeListFilter}
+        />
       </View>
     </View>
   );

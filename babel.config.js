@@ -3,7 +3,6 @@ module.exports = function (api) {
   return {
     presets: ['babel-preset-expo'],
     plugins: [
-      'transform-inline-environment-variables',
       'react-native-reanimated/plugin',
       'import-glob',
       [
@@ -23,6 +22,17 @@ module.exports = function (api) {
             '@utils': './src/utils',
             '@localization': './src/localization',
           },
+        },
+      ],
+      [
+        'module:react-native-dotenv',
+        {
+          moduleName: '@env',
+          path: '.env',
+          blacklist: null,
+          whitelist: null,
+          safe: false,
+          allowUndefined: true,
         },
       ],
     ],

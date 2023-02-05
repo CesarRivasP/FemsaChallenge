@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {scale, verticalScale} from '@utils/responsiveUtils';
 import {blue, gray, white, green, red} from '@constants/colors';
+import {IS_IOS} from '@constants/device';
 
 export default StyleSheet.create({
   container: {
@@ -138,6 +139,22 @@ export default StyleSheet.create({
   },
   buttonsContainer: {
     height: verticalScale(70),
+  },
+  singleButtonContainer: {
+    justifyContent: IS_IOS ? 'center' : 'flex-start',
+    alignItems: 'center',
+  },
+  multipleButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: IS_IOS ? 'center' : 'flex-start',
+  },
+  paralelsButtonContainer: {
+    flexDirection: 'row',
+    backgroundColor: blue,
+    width: '48%',
+    height: verticalScale(50),
+    borderRadius: verticalScale(10),
     justifyContent: 'center',
     alignItems: 'center',
   },

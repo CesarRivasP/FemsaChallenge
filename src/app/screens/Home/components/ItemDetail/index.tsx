@@ -1,7 +1,9 @@
 import React, {memo} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 import {ArrowIcon} from '@components/Icons';
 import {getDateFormatted} from '@screens/Home/utils';
+import Routes from '@constants/routes';
 import styles from '@screens/Home/styles';
 
 interface ItemDetailProps {
@@ -19,8 +21,13 @@ function ItemDetail({
   isRedemption,
   points,
 }: ItemDetailProps) {
+  const {navigate} = useNavigation();
+
+  const handlePress = () =>
+    navigate(Routes.ProductDetail, {createdAt, image, points});
+
   return (
-    <TouchableOpacity style={styles.itemContainer}>
+    <TouchableOpacity style={styles.itemContainer} onPress={handlePress}>
       <View style={styles.imageContainer}>
         <Image source={{uri: image}} style={styles.image} />
       </View>
