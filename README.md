@@ -62,8 +62,8 @@ Here are screenshots of the app:
 
 ### Additional details
 * The env was pushed to the git repository, to facilitate testing the challenge.
-* It was possible to validate that every time one of the images provided by the api is accessed, the image changes no matter how much it maintains a theme or topic, so that is the reason why sometimes, when entering the detail of a product is displayed different from the one listed.
-* The tests were implemented using the React Native Testing Library, where unit tests and integration tests were evaluated using an axios mock to validate the behavior of the interface.
+* It was possible to validate that there are opportunities in which when accessing one of the images provided by the api, the image changes a lot, although it maintains a theme or topic, so sometimes when entering the detail of a product it can show another image other than the list. It seems to me that this occurs at certain times, it is not permanent.
+* Tests were implemented using the React Native Testing Library, where unit tests and integration tests were evaluated using an axios mock to validate interface behavior. An attempt was made to have the average coverage above 75%.
 
 <img width="1200" alt="test_coverage" src="https://user-images.githubusercontent.com/31055680/216985646-11ab22b0-198a-4172-af00-b75ebaccc953.png">
 
