@@ -1,5 +1,5 @@
 import {useCallback} from 'react';
-// import SplashScreen from 'react-native-splash-screen';
+import * as SplashScreen from 'expo-splash-screen';
 import {useFonts} from 'expo-font';
 
 function useSetupFonts() {
@@ -11,8 +11,7 @@ function useSetupFonts() {
 
   const onLayoutRootView = useCallback(async () => {
     if (fontsLoaded) {
-      // TODO: FOR RESOLVE
-      // SplashScreen.hide();
+      await SplashScreen.hideAsync();
     }
   }, [fontsLoaded]);
 

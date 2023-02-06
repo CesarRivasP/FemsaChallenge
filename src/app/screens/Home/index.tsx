@@ -5,7 +5,13 @@ import useTranslations from '@hooks/useTranslations';
 import Header from '@screens/Home/components/Header';
 import ItemDetail from '@screens/Home/components/ItemDetail';
 import Footer from '@screens/Home/components/Footer';
-import {ListProps, ListData, ListFilters} from '@screens/Home/constants';
+import {
+  MONTH_DUMMY,
+  NAME_DUMMY,
+  ListProps,
+  ListData,
+  ListFilters,
+} from '@screens/Home/constants';
 import ProductsService from '@services/index';
 import styles from '@screens/Home/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
@@ -90,11 +96,7 @@ function Home() {
 
   return (
     <View style={styles.container}>
-      <Header
-        month="Diciembre"
-        name="Ruben Rodriguez"
-        totalPoints={totalPoints}
-      />
+      <Header month={MONTH_DUMMY} name={NAME_DUMMY} totalPoints={totalPoints} />
       <View style={styles.bottomContainer}>
         <View style={styles.listContainer}>
           <Text style={[styles.labelText, styles.labelListText]}>

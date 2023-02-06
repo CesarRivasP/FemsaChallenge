@@ -8,5 +8,7 @@ export default {
     ACUMULATED_POINTS_LABEL: 'Con esta compra acumulaste:',
     POINT_COUNT: 'puntos',
     CONFIRM_BUTTON: 'Aceptar',
+    INVALID_PRODUCT_NAME: 'Nombre del Producto',
+    INVALID_DATE: 'Fecha Invalida',
   },
 };

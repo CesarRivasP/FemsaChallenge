@@ -1,10 +1,12 @@
 import React, {memo, useMemo} from 'react';
 import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {useNavigation} from '@react-navigation/native';
 import {ArrowIcon} from '@components/Icons';
 import {getDateFormatted} from '@screens/Home/utils';
 import Routes from '@constants/routes';
-import styles from '@screens/Home/styles';
+import {AppStackParamList} from '@constants/appStackParamsList';
+import styles from '@screens/Home/components/ItemDetail/styles';
 
 interface ItemDetailProps {
   image: string;
@@ -21,7 +23,8 @@ function ItemDetail({
   isRedemption,
   points,
 }: ItemDetailProps) {
-  const {navigate} = useNavigation();
+  const {navigate} =
+    useNavigation<NativeStackNavigationProp<AppStackParamList>>();
 
   const date = useMemo(() => getDateFormatted(createdAt), [createdAt]);
 

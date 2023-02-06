@@ -13,12 +13,13 @@ import testIds from '@screens/ProductDetail/testIds';
 function ProductDetail() {
   const {translate} = useTranslations();
   const {goBack} = useNavigation();
+
   const {createdAt, image, points, product} =
     useRouteWithParams<Routes.ProductDetail>().params || {
-      createdAt: 'Fecha Invalida',
+      createdAt: translate(`${TRANSLATE_KEY}:INVALID_DATE`),
       image: undefined,
       points: 0,
-      product: 'Nombre del Producto',
+      product: translate(`${TRANSLATE_KEY}:INVALID_PRODUCT_NAME`),
     };
 
   return (

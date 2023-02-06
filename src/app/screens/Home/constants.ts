@@ -22,3 +22,6 @@ export enum ListFilters {
   WINNING = 'WINNING',
   REDEEMED = 'REDEEMED',
 }
+
+export const MONTH_DUMMY = 'Diciembre';
+export const NAME_DUMMY = 'Ruben Rodriguez';
