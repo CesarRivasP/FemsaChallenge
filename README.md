@@ -65,6 +65,7 @@ Here are screenshots of the app:
 * It was possible to validate that every time one of the images provided by the api is accessed, the image changes no matter how much it maintains a theme or topic, so that is the reason why sometimes, when entering the detail of a product is displayed different from the one listed.
 * The tests were implemented using the React Native Testing Library, where unit tests and integration tests were evaluated using an axios mock to validate the behavior of the interface.
 
+<img width="1200" alt="test_coverage" src="https://user-images.githubusercontent.com/31055680/216985646-11ab22b0-198a-4172-af00-b75ebaccc953.png">
 
 ### Topics to improve
 - I need to implement a mock that would allow testing the texts correctly when they are translated. For this reason, in most tests the elements are located through the testID and not through the text.
