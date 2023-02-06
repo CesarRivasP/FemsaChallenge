@@ -25,6 +25,7 @@
       "@services/*": ["src/services/*"],
       "@localization/*": ["src/localization/*"],
       "@utils/*": ["src/utils/*"],
+      "@mocks/*": ["__mocks__/*"],
     },
     "skipLibCheck": true
   },

@@ -8,6 +8,7 @@ import useTranslations from '@hooks/useTranslations';
 import Routes from '@constants/routes';
 import styles from '@screens/ProductDetail/styles';
 import {TRANSLATE_KEY} from '@screens/ProductDetail/i18n';
+import testIds from '@screens/ProductDetail/testIds';
 
 function ProductDetail() {
   const {translate} = useTranslations();
@@ -23,7 +24,9 @@ function ProductDetail() {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        <Text style={styles.productTitle}>{product}</Text>
+        <Text style={styles.productTitle} testID={testIds.productName}>
+          {product}
+        </Text>
       </View>
       <View style={styles.layoutContainer}>
         <View style={styles.cardContainer}>
@@ -33,19 +36,22 @@ function ProductDetail() {
           <Text style={styles.detailLabel}>
             {translate(`${TRANSLATE_KEY}:PRODUCT_DETAIL_LABEL`)}
           </Text>
-          <Text style={styles.detailDate}>
+          <Text style={styles.detailDate} testID={testIds.buyDate}>
             {`${translate(`${TRANSLATE_KEY}:BUY_DATE`)} ${createdAt}`}
           </Text>
           <Text style={styles.detailAccumulated}>
             {translate(`${TRANSLATE_KEY}:ACUMULATED_POINTS_LABEL`)}
           </Text>
-          <Text style={styles.detailsPoints}>{`${points} ${translate(
+          <Text
+            style={styles.detailsPoints}
+            testID={testIds.pointsCount}>{`${points} ${translate(
             `${TRANSLATE_KEY}:POINT_COUNT`,
           )}`}</Text>
         </View>
       </View>
       <View style={styles.buttonLayoutContainer}>
         <CustomButton
+          testID={testIds.confirmButton}
           title={`${TRANSLATE_KEY}:CONFIRM_BUTTON`}
           containerStyle={styles.buttonContainer}
           onPress={goBack}

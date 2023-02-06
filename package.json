@@ -21,6 +21,7 @@
     "expo-font": "~11.0.1",
     "expo-splash-screen": "~0.17.5",
     "expo-status-bar": "~1.4.2",
+    "expo-updates": "~0.15.6",
     "i18next": "22.4.9",
     "react": "18.1.0",
     "react-dom": "18.1.0",

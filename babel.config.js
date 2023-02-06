@@ -21,6 +21,7 @@ module.exports = function (api) {
             '@services': './src/services',
             '@utils': './src/utils',
             '@localization': './src/localization',
+            '@mocks': './__mocks__',
           },
         },
       ],
