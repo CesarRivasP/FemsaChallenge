@@ -40,7 +40,7 @@ function SafeAreaWrapper<P extends object>(
         <React.Fragment key={`SafeArea-${key}`}>
           <StatusBar
             animated
-            style="light"
+            style="dark"
             backgroundColor={backgrounds.headBackground}
           />
           <SafeAreaView
@@ -67,7 +67,7 @@ function SafeAreaWrapper<P extends object>(
       <React.Fragment key={`SafeArea-${key}`}>
         <StatusBar
           animated
-          style="light"
+          style="dark"
           backgroundColor={backgrounds.bodyBackground}
         />
         <SafeAreaView
