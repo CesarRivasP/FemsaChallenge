@@ -54,9 +54,11 @@ The main screen has the possibility of being able to filter the products based o
 Here are screenshots of the app:
 
 #### Iphone 13
+| <img src="https://user-images.githubusercontent.com/31055680/216982769-d2b36191-d4cf-4757-a9c9-c73d1c12568f.PNG" width="300"/>     | <img src="https://user-images.githubusercontent.com/31055680/216982775-8a851866-ee70-4da4-8b64-aeb3d439f6be.PNG" width="300"/>     |  <img src="https://user-images.githubusercontent.com/31055680/216982781-0b181d4f-959c-47a4-9c6b-293566ea177f.PNG" width="300"/>     |  <img src="https://user-images.githubusercontent.com/31055680/216982787-9bd4efc3-95a8-4a28-a3c6-c829b7f71212.PNG" width="300"/>     |
 
 #### Xiaomi 11 lite 5G NE
 
+| <img src="https://user-images.githubusercontent.com/31055680/216983280-96214a13-80d6-43a1-a374-c1c4ef96ce60.jpg" width="300"/>     | <img src="https://user-images.githubusercontent.com/31055680/216983285-beff179d-a18d-4396-92a9-82469a18ee2b.jpg" width="300"/>     |  <img src="https://user-images.githubusercontent.com/31055680/216983288-72f6d40a-9cb9-4cb4-ab51-f707761e3686.jpg" width="300"/>     |  <img src="https://user-images.githubusercontent.com/31055680/216983289-f8c642f9-d1fd-46ca-b410-8a6b92751e9e.jpg" width="300"/>     |
 
 ### Additional details
 * The env was pushed to the git repository, to facilitate testing the challenge.
