@@ -1,7 +1,7 @@
 import React, {memo} from 'react';
 import {Text, View} from 'react-native';
 import useTranslations from '@hooks/useTranslations';
-import styles from '@screens/Home/styles';
+import styles from '@screens/Home/components/Header/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
 import testIds from '@screens/Home/testIds';
 
