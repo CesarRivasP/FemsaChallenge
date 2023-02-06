@@ -10,6 +10,7 @@ import TestWrapper from '@mocks/TestWrapper';
 import HomeScreen from '@screens/Home';
 import testIds from '@screens/Home/testIds';
 import {MOCK_DATA} from '@mocks/mockData';
+import {getDateFormatted} from '@screens/Home/utils';
 
 describe('Home Screen', () => {
   const renderComponent = () =>
@@ -84,5 +85,9 @@ describe('Home Screen', () => {
     await waitFor(() => {
       expect(screen.getByTestId(testIds.emptyContent)).toBeTruthy();
     });
+  });
+
+  it('By not passing a parameter to the function, the indicated message should be obtained', async () => {
+    expect(getDateFormatted()).toBe('Fecha invalida');
   });
 });

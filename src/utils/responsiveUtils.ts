@@ -13,6 +13,3 @@ export const verticalScale = (size: number) => {
   const relation = SCREEN_HEIGHT / guidelineBaseHeight;
   return Math.min(1.2, relation) * size;
 };
-
-export const moderateScale = (size: number, factor: number = 0.5) =>
-  size + (scale(size) - size) * factor;
