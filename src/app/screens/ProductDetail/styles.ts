@@ -23,7 +23,7 @@ export default StyleSheet.create({
   productTitle: {
     fontFamily: 'AvenirBold',
     fontSize: 24,
-    lineHeight: verticalScale(20),
+    lineHeight: verticalScale(26),
   },
   productImage: {
     width: scale(200),
@@ -74,7 +74,7 @@ export default StyleSheet.create({
   detailsPoints: {
     fontFamily: 'AvenirBold',
     fontSize: 24,
-    lineHeight: verticalScale(20),
+    lineHeight: verticalScale(26),
     marginVertical: verticalScale(20),
   },
   buttonLayoutContainer: {
