@@ -2,7 +2,7 @@ import React, {memo} from 'react';
 import {View} from 'react-native';
 import CustomButton from '@components/CustomButton';
 import {ListFilters} from '@screens/Home/constants';
-import styles from '@screens/Home/styles';
+import styles from '@screens/Home/components/Footer/styles';
 import {TRANSLATE_KEY} from '@screens/Home/i18n';
 import testIds from '@screens/Home/testIds';
 

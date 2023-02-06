@@ -39,7 +39,11 @@ function ItemDetail({
   return (
     <TouchableOpacity style={styles.itemContainer} onPress={handlePress}>
       <View style={styles.imageContainer}>
-        <Image source={{uri: image}} style={styles.image} />
+        <Image
+          source={{uri: image}}
+          style={styles.image}
+          resizeMode="contain"
+        />
       </View>
       <View style={styles.descriptionContainer}>
         <Text style={styles.descriptionTitle}>{product}</Text>

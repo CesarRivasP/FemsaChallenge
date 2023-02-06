@@ -31,7 +31,11 @@ function ProductDetail() {
       </View>
       <View style={styles.layoutContainer}>
         <View style={styles.cardContainer}>
-          <Image source={{uri: image}} style={styles.productImage} />
+          <Image
+            source={{uri: image}}
+            style={styles.productImage}
+            resizeMode="contain"
+          />
         </View>
         <View style={styles.detailsContainer}>
           <Text style={styles.detailLabel}>
